@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Live Weather App</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Weather App</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <h3>⛈️ Live Weather Report 🌦️
-         </h3>
-    <form id="form">
-        <input type="text" id="search" placeholder="Search by location" autocomplete="off" />
-        <hr>
-        <button id="submit" type="submit" name="submit">Get Forecast</button>
-    </form>
-    <main id="main"></main>
-    <hr><hr><hr><hr>
-    <footer>
-        Page created by 'Manish Kumar'
-        <br>
-        © SINCE 1998
-    </footer>
+<div class="app">
+    <h1>⛈️ Live Weather 🌦️</h1>
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Search city...">
+        <button id="searchBtn">Search</button>
+        <button id="locationBtn">📍</button>
+    </div>
+    <ul id="searchResults" class="results-list"></ul>
+    <div id="currentWeather"></div>
+    <div class="sun-time" id="sunTime"></div>
+  <div id="hourlySection" class="data-section">
+    <h2>📊 Hourly Temperature</h2>
+    <canvas id="hourlyChart"></canvas>
+</div>
 
+<div id="forecastSection" class="data-section">
+    <h2>🌡️ 7 Day Forecast</h2>
+    <div class="forecast" id="forecast"></div>
+</div>
+
+<div id="mapSection" class="data-section">
+    <h2>🌎 Location Map</h2>
+    <div id="map"></div>
+</div>
+</div>
+
+   <div class="footer-section">
+         <h3 class="footer-section-h">Page created by 'Manish Kumar'</h3> 
+         <h4 class="footer-section-h">© SINCE 1998</h4> 
+    </div>
+<script src="script.js"></script>
 </body>
-
 </html>
